@@ -7,7 +7,7 @@ import re
 import MySQLdb
 idc_class_list=[]
 def db_update_operate(sql):
-    db = MySQLdb.connect("10.30.0.71","yw_idcoperate","7cxaXb5sGk4Z","cloudplayer_center_controller_prod",charset='utf8')
+    db = MySQLdb.connect("x.x.x.x","yw_idcoperate","7cxaXb5sGk4Z","cloudplayer_center_controller_prod",charset='utf8')
     cursor = db.cursor()
     # SQL 更新语句
     sql_phrase = sql
@@ -23,7 +23,7 @@ def db_update_operate(sql):
        db.rollback()
     db.close()
 def db_select_operate():
-    db = MySQLdb.connect("10.30.0.71","ywreader","hmyw@2016","cloudplayer_center_controller_prod",charset='utf8')
+    db = MySQLdb.connect("x.x.x.x","ywreader","hmyw@2016","cloudplayer_center_controller_prod",charset='utf8')
     cursor = db.cursor()
     sql = "select * from interface;"
     cursor.execute(sql)
@@ -100,7 +100,7 @@ def update_mysql_online(num):
     db_update_operate(sql)
 
 def request_api():
-    url_list=['http://10.30.0.217:9080/route/refresh/all','http://10.30.0.137:9080/route/refresh/all','http://10.30.0.63:9080/route/refresh/all','http://10.30.0.64:9080/route/refresh/all','http://10.30.0.217:9080/route/location/list']
+    url_list=['http://x.x.x.x:9080/route/refresh/all','http://x.x.x.x:9080/route/refresh/all','http://x.x.x.x:9080/route/refresh/all','http://x.x.x.x:9080/route/refresh/all','http://x.x.x.x:9080/route/location/list']
     headers={'Content-Type':'application/json'}
     for r in url_list:
         res=requests.post(r,headers=headers)
