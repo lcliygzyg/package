@@ -28,8 +28,7 @@ def mail(title,message):
     user = 'monitor@haima.me'
     password = "haima.M.2016"
     toall = [
-             "zhengyanguang@haima.me", # 郑炎光
-             "zhangguobao@haima.me",# 张国宝
+             "mailaddress", # 郑炎光
               ]
     msg = MIMEText(message,_subtype="html",_charset="utf-8")
     msg['Subject'] = title
